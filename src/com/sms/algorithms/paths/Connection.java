@@ -13,4 +13,16 @@ public class Connection {
 	public static Connection make(int x, int y) {
 		return new Connection(x, y);
 	}
+	
+	public int hashCode() {
+		return x + y;
+	}
+	
+	public boolean equals(Object other) {
+		if (other instanceof Connection) {
+			Connection another = (Connection) other;
+			return x == another.x && y == another.y;
+		}
+		return false;
+	}
 }

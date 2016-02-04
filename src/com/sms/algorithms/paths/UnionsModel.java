@@ -15,9 +15,12 @@ public class UnionsModel {
 	}
 	
 	public void connect(int x, int y) {
+		Connection connection = Connection.make(x, y);
+		if (!connections.contains(connection)) {
+			connections.add(connection);
+		}
 		if (!algorithm.isConnected(x, y)) {
 			algorithm.connect(x, y);
-			connections.add(Connection.make(x, y));
 		}
 	}
 	
